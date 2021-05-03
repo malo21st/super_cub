@@ -71,4 +71,4 @@ folium_static(m)
 with st.beta_expander("お願い・お知らせ"):
     st.markdown("- 聖地巡礼の際は、学校、お店、近隣住民の方にご迷惑とならないように節度ある行動とマナーに十分心がけて下さい。")
     st.markdown("- [アニメ「スーパーカブ」公式サイト](https://supercub-anime.com/)")
-    st.markdown("- Twitter：[@malo21st](https://twitter.com/malo21st)")
+    st.markdown("- このサイトの作者のTwitter：[@malo21st](https://twitter.com/malo21st)")
