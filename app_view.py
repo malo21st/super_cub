@@ -37,7 +37,7 @@ with st.sidebar:
 {memo}  
 
 緯度, 経度：{loc}
-### [ストリートビュー]({url})
+### [ビュー（画像）]({url})
     """
     st.markdown("## **聖地の情報**")
     st.info(pos_info)
@@ -50,7 +50,7 @@ m = folium.Map(location=[selected["lat"], selected["lon"]], zoom_start=15)
 # add marker for Liberty Bell
 def add_marker(map, lat, lon, anime, pos, dsp, url, sanc):
     if url:
-        ph = f'<B>{anime}</B><br><B>( {pos} )</B><p>{dsp}<p><a href="{url}" target="_blank">ビュー</a>'
+        ph = f'<B>{anime}</B><br><B>( {pos} )</B><p>{dsp}<p><a href="{url}" target="_blank">ビュー（画像）</a>'
     else:
         ph = f'<B>{anime}</B><br><B>( {pos} )</B><p>{dsp}'
     pp = folium.Html(ph, script=True)
