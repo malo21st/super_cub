@@ -27,7 +27,7 @@ with st.sidebar:
     d = data.query(f'anime == "{sanc}"')
     idx = d["id"].values[0]
     lat, lon = d["lat"].values[0], d["lon"].values[0]
-    loc = f'{lat:.1f}, {lon:.1f}'
+    loc = f'{lat:.3f}, {lon:.3f}'
     anime, pos, dsp, url = d["anime"].values[0], d["pos"].values[0], d["dsp"].values[0], d["url"].values[0]
 
     memo = dsp.replace("<br>", "  ")
