@@ -39,7 +39,7 @@ with st.sidebar:
 - 緯度, 経度：{loc}
 - [ビュー（画像）]({url})
     """
-    st.markdown("## **聖地の情報**")
+    st.markdown("### 聖地情報")
     st.info(pos_info)
 
 # center on Liberty Bell
