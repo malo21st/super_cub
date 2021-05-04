@@ -62,7 +62,7 @@ for _, d in data.iterrows():
     m = add_marker(m, d["lat"], d["lon"], d["anime"], d["pos"], d["dsp"], d["url"], sanc)
 
 # layout
-st.markdown("# アニメ「スーパーカブ」聖地巡礼マップ")
+st.title("アニメ「スーパーカブ」聖地巡礼マップ")
 folium_static(m)
 with st.beta_expander("お願い・お知らせ"):
     st.warning(
