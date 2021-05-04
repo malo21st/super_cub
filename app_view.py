@@ -36,8 +36,8 @@ with st.sidebar:
 ### {pos}
 {memo}  
 
-緯度, 経度：{loc}
-### [ビュー（画像）]({url})
+- 緯度, 経度：{loc}
+- [ビュー（画像）]({url})
     """
     st.markdown("## **聖地の情報**")
     st.info(pos_info)
