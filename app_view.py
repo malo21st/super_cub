@@ -11,14 +11,13 @@ DB = "scub_map.db"
 def done_connection():
     return sqlite3.connect(DB, check_same_thread=False)
 
-conn = done_connection()
-
 # RDB
 def get_data():
     SQL = "SELECT * FROM master;"
     df_data = pd.read_sql(SQL, conn)
     return df_data
 
+conn = done_connection()
 data = get_data()
 
 # side_bar
@@ -32,21 +31,19 @@ with st.sidebar:
     anime, pos, dsp, url = d["anime"].values[0], d["pos"].values[0], d["dsp"].values[0], d["url"].values[0]
 
     memo = dsp.replace("<br>", "  ")
-    pos_info = f"""
-### {pos}
-{memo}  
+    st.info(
+        f"### {pos}  \n"
+        f"{memo}  \n"
+        f"- 緯度, 経度：{loc}  \n"
+        f"- [ビュー（画像）]({url})  \n"
+    )
 
-- 緯度, 経度：{loc}
-- [ビュー（画像）]({url})
-    """
-    st.info(pos_info)
-
-# center on Liberty Bell
 selected = data.query(f'anime == "{sanc}"')
 
+# map
 m = folium.Map(location=[selected["lat"], selected["lon"]], zoom_start=15)
 
-# add marker for Liberty Bell
+# marker 
 def add_marker(map, lat, lon, anime, pos, dsp, url, sanc):
     if url:
         ph = f'<B>{anime}</B><br><B>( {pos} )</B><p>{dsp}<p><a href="{url}" target="_blank">ビュー（画像）</a>'
