@@ -50,7 +50,7 @@ def add_marker(map, lat, lon, anime, pos, dsp, url, sanc):
     else:
         ph = f'<B>{anime}</B><br><B>( {pos} )</B><p>{dsp}'
     pp = folium.Html(ph, script=True)
-    popup = folium.Popup(pp, max_width=160)
+    popup = folium.Popup(pp, max_width=200)
     tooltip = f"<B>{anime}</B><br>( {pos} )"
     color = "red" if anime == sanc else "blue"
     folium.Marker(
